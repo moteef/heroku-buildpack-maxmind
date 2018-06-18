@@ -50,6 +50,13 @@ download(){
 		echo "-----> $EDITION: Extracting $TAR"
 
 		tar -zxvf $TAR -C $CACHE_DIR --no-anchored --strip-components=1 "$EDITION.mmdb"
+    echo
+    echo
+    echo `ls $CACHE_DIR`
+    echo
+    echo
+
+    cp ./GeoIP2-Country_20180619/GeoIP2-Country.mmdb $CACHE_DIR/GeoIP2-Country.mmdb
 
 		touch $LAST
 	else
@@ -57,6 +64,13 @@ download(){
 	fi
 
 	OUTPUT="$BUILD_DIR/$SAVE"
+
+  echo
+  echo
+	echo `ls $CACHE_DIR`
+  echo
+  echo
+	echo `ls $DB`
 
 	echo "-----> $EDITION: Copying $DB to $OUTPUT"
 
